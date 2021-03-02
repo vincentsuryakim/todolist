@@ -10,7 +10,8 @@ export const Landing = () => {
     const [newTaskName, setNewTaskName] = useState('')
     const [newDueDate, setDueDate] = useState('')
 
-    const [searchActivityName, setSearchActivityName] = useState('')
+    const [searchedName, setSearchedName] = useState('')
+
     const [sortDate, setSortDate] = useState(false)
 
     const AddTask = () => {
@@ -75,7 +76,7 @@ export const Landing = () => {
                         </div>
                         <div className="tasklist-search">
                             <div className="tasklist-search-bar">
-                                <input type="text" placeholder="Search activities..."/>
+                                <input type="text" placeholder="Search activities..." onChange={(e) => setSearchedName(e.target.value)} />
                             </div>
                             <div className="tasklist-search-sort">
                                 <h6>Sort By</h6>
@@ -92,9 +93,11 @@ export const Landing = () => {
                         <div className="tasklist-content">
                             {data &&
                                 data.map((content, idx) => {
-                                    return (
-                                        <Activity name={content.name} date={content.date} index={idx} data={data} setData={setData} />
-                                    )
+                                    if (content.name.includes(searchedName)) {
+                                        return (
+                                            <Activity name={content.name} date={content.date} index={idx} data={data} setData={setData} />
+                                        )
+                                    }
                                 })
                             }
                         </div>
