@@ -52,7 +52,7 @@ export const Style = styled.div`
                 /* background-color: green; */
                 .newtask-title {
                     .newtask-title-wrapper {
-                        width: 12%;
+                        width: 7rem;
                         background-color: #13293D;
                         display: flex;
                         align-items: center;
@@ -164,7 +164,7 @@ export const Style = styled.div`
                 border-top: 3.2px solid #13293D;
                 .tasklist-title {
                     .tasklist-title-wrapper {
-                        width: 12%;
+                        width: 7rem;
                         background-color: #13293D;
                         display: flex;
                         align-items: center;
