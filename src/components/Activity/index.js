@@ -3,9 +3,14 @@ import { Style } from './style';
 
 import deletesymbol from './assets/delete.svg';
 
-export const Activity = ({ name, date }) => {
+export const Activity = ({ name, date, index, data, setData }) => {
+
+    const deleteData = () => {
+        setData(data.filter((item) => data.indexOf(item) != index))
+    }
+
     return (
-        <Style titlelength={name.length}>
+        <Style>
             <div className="information">
                 <div className="information-wrapper">
                     <h4>{name}</h4>
@@ -13,7 +18,7 @@ export const Activity = ({ name, date }) => {
                 </div>
             </div>
             <div className="delete">
-                <img src={deletesymbol} />
+                <img src={deletesymbol} onClick={(e) => deleteData()}/>
             </div>
         </Style>
     )
