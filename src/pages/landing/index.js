@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Style } from './style'
 import ReactSlider from 'react-slider'
 
@@ -16,11 +16,54 @@ export const Landing = () => {
 
     const AddTask = () => {
         if (newTaskName.length !== 0 && newDueDate.length !== 0) {
-            setData([...data, {
+            let temp = [...data, {
                 name: newTaskName,
                 date: newDueDate
-            }])
+            }]
+
+            if (sortDate) {
+                temp.sort((a,b) => (a.date > b.date)
+                                    ? 1
+                                    : (a.date === b.date)
+                                        ? (a.name > b.name 
+                                            ? 1
+                                            : -1) 
+                                        : -1)
+            } else {
+                temp.sort((a,b) => (a.name > b.name)
+                                    ? 1
+                                    : (a.name === b.name)
+                                        ? (a.date > b.date
+                                            ? 1
+                                            : -1)
+                                        : -1)
+            }
+
+            setData(temp)
         }
+    }
+
+    const sortTask = () => {
+        let temp = data;
+        if (!sortDate) {
+            temp.sort((a,b) => (a.date > b.date)
+                                ? 1
+                                : (a.date === b.date)
+                                    ? (a.name > b.name 
+                                        ? 1
+                                        : -1) 
+                                    : -1)
+        } else {
+            temp.sort((a,b) => (a.name > b.name)
+                                ? 1
+                                : (a.name === b.name)
+                                    ? (a.date > b.date
+                                        ? 1
+                                        : -1)
+                                    : -1)
+        }
+        setData(temp)
+        setSortDate(!sortDate)
     }
 
     return (
@@ -85,7 +128,8 @@ export const Landing = () => {
                                     min={0}
                                     max={1}
                                     thumbClassName="example-thumb"
-                                    onChange={() => setSortDate(!sortDate ? true : false)}
+                                    onChange={() => sortTask()}
+                                    // renderThumb={(props, state) => <div {...props}>{sortDate ? "Date" : "Name"}</div>}
                                     renderThumb={(props, state) => <div {...props}>{state.valueNow === 0 ? "Name" : "Date"}</div>}
                                 />
                             </div>
