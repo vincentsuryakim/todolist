@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Style } from './style'
+import ReactSlider from 'react-slider'
 
 import { Activity } from './../../components/Activity';
 
 export const Landing = () => {
+    const [sortDate, setSortDate] = useState(false)
+
     return (
         <Style>
             <div className="header">
@@ -60,19 +63,29 @@ export const Landing = () => {
                                 <input type="text" placeholder="Search activities..."/>
                             </div>
                             <div className="tasklist-search-sort">
-                                {/* cara bikin slider gt gmn anjg */}
+                                <h6>Sort By</h6>
+                                <ReactSlider
+                                    className="horizontal-slider"
+                                    min={0}
+                                    max={1}
+                                    thumbClassName="example-thumb"
+                                    onChange={() => setSortDate(!sortDate ? true : false)}
+                                    renderThumb={(props, state) => <div {...props}>{state.valueNow == 0 ? "Name" : "Date"}</div>}
+                                />
                             </div>
                         </div>
                         <div className="tasklist-content">
-                            <Activity className="activity" name="Activity #1" date="February 25th 2021" />
-                            <Activity className="activity" name="Activity #1" date="February 25th 2021" />
-                            <Activity className="activity" name="Activity #1" date="February 25th 2021" />
-                            <Activity className="activity" name="Activity #1" date="February 25th 2021" />
-                            <Activity className="activity" name="Activity #1" date="February 25th 2021" />
-                            <Activity className="activity" name="Activity #1" date="February 25th 2021" />
-                            <Activity className="activity" name="Activity #1" date="February 25th 2021" />
-                            <Activity className="activity" name="Activity #1" date="February 25th 2021" />
-                            <Activity className="activity" name="Activity #1" date="February 25th 2021" />
+                            <Activity name="Activity #1" date="February 25th 2021" />
+                            <Activity name="Activity #1" date="February 25th 2021" />
+                            <Activity name="Activity #1" date="February 25th 2021" />
+                            <Activity name="Activity #1" date="February 25th 2021" />
+                            <Activity name="Activity #1" date="February 25th 2021" />
+                            <Activity name="Activity #1" date="February 25th 2021" />
+                            <Activity name="Activity #1" date="February 25th 2021" />
+                            <Activity name="Activity #1" date="February 25th 2021" />
+                            <Activity name="Activity #1" date="February 25th 2021" />
+                            <Activity name="Activity #1" date="February 25th 2021" />
+                            <Activity name="Activity #1" date="February 25th 2021" />
                         </div>
                     </div>
                 </div>

@@ -132,6 +132,7 @@ export const Style = styled.div`
                                 border-radius: 3px;
                                 width: 100%;
                                 padding-left: 1ch;
+                                padding-right: 1ch;
                             }
                         }
                     }
@@ -208,15 +209,80 @@ export const Style = styled.div`
                     .tasklist-search-sort {
                         width: 34%;
                         height: 100%;
-                        background-color: yellow;
+                        /* background-color: yellow; */
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        h6 {
+                            font-weight: 600;
+                            font-size: 15px;
+                            margin-right: 0.7rem;
+                        }
+                        .horizontal-slider {
+                            width: 30%;
+                            max-width: 500px;
+                            height: 2.3rem;
+                            border-radius: 15px;
+                            background-color: #E0E0E0;
+                            box-shadow: inset 0 0 4px rgba(97,97,97,0.3);
+                            padding-left: 5px;
+                            padding-right: 5px;
+                        }
+                        .horizontal-slider .example-thumb {
+                            width: 60%;
+                            height: 100%;
+                            display: flex;
+                            border-radius: 15px;
+                        }
+                        .example-thumb {
+                            font-size: 0.9rem;
+                            text-align: center;
+                            background-color: white;
+                            color: black;
+                            cursor: pointer;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
                     }
                 }
                 .tasklist-content {
-                    .activity {
-                        
-                    }
+                    
                 }
             }
         }
     }
 `;
+
+
+/* .horizontal-slider {
+    width: 50%;
+    max-width: 500px;
+    height: 28px;
+    border-radius: 10px;
+    background-color: #E0E0E0;
+    box-shadow: inset 0 0 4px rgba(97,97,97,0.2);
+}
+.example-thumb {
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.horizontal-slider .example-thumb {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 70%;
+    border-radius: 7px;
+    line-height: 38px;
+}
+.example-track {
+    position: relative;
+    background: #ddd;
+} */
