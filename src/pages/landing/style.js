@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const globalWidth = 60;
+const globalWidthMobile = 80;
 const newTaskTitleHeight = 35;
 
 export const Style = styled.div`
@@ -22,6 +23,9 @@ export const Style = styled.div`
         .header-wrapper {
             /* background-color: red; */
             width: ${globalWidth}%;
+            @media (max-width: 576.98px) {
+                width: ${globalWidthMobile}%;
+            }
             margin-bottom: 1rem;
             h1 {
                 color: #E8F1F2;
@@ -41,6 +45,9 @@ export const Style = styled.div`
             margin-top: 0.3rem;
             /* background-color: red; */
             width: ${globalWidth}%;
+            @media (max-width: 576.98px) {
+                width: ${globalWidthMobile}%;
+            }
             .caption {
                 h3 {
                     font-size: 35px;
@@ -82,7 +89,7 @@ export const Style = styled.div`
                         width: 2%;
                     }
                     .taskname {
-                        width: 66%;
+                        width: 55%;
                         /* background-color: purple; */
                         .taskname-title {
                             height: ${newTaskTitleHeight}%;
@@ -109,7 +116,7 @@ export const Style = styled.div`
                         }
                     }
                     .due-date {
-                        width: 17%;
+                        width: 28%;
                         /* background-color: grey; */
                         .due-date-title {
                             height: ${newTaskTitleHeight}%;
@@ -133,6 +140,9 @@ export const Style = styled.div`
                                 width: 100%;
                                 padding-left: 1ch;
                                 padding-right: 1ch;
+                                @media (max-width: 576.98px) {
+                                    font-size: 11px;
+                                }
                             }
                         }
                     }
@@ -194,6 +204,9 @@ export const Style = styled.div`
                     flex-direction: row;
                     .tasklist-search-bar {
                         width: 66%;
+                        @media (max-width: 576.98px) {
+                            width: 55%;
+                        }
                         /* background-color: green; */
                         height: 100%;
                         display: flex;
@@ -208,6 +221,9 @@ export const Style = styled.div`
                     }
                     .tasklist-search-sort {
                         width: 34%;
+                        @media (max-width: 576.98px) {
+                            width: 45%;
+                        }
                         height: 100%;
                         /* background-color: yellow; */
                         display: flex;
@@ -227,6 +243,7 @@ export const Style = styled.div`
                             box-shadow: inset 0 0 4px rgba(97,97,97,0.3);
                             padding-left: 5px;
                             padding-right: 5px;
+                            cursor: pointer;
                         }
                         .horizontal-slider .example-thumb {
                             width: 60%;
@@ -254,35 +271,3 @@ export const Style = styled.div`
         }
     }
 `;
-
-
-/* .horizontal-slider {
-    width: 50%;
-    max-width: 500px;
-    height: 28px;
-    border-radius: 10px;
-    background-color: #E0E0E0;
-    box-shadow: inset 0 0 4px rgba(97,97,97,0.2);
-}
-.example-thumb {
-    font-size: 0.9em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    box-sizing: border-box;
-}
-.horizontal-slider .example-thumb {
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 70%;
-    border-radius: 7px;
-    line-height: 38px;
-}
-.example-track {
-    position: relative;
-    background: #ddd;
-} */

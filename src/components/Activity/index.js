@@ -5,7 +5,7 @@ import deletesymbol from "./assets/delete.svg";
 
 export const Activity = ({ name, date, index, data, setData }) => {
   const deleteData = () => {
-    setData(data.filter((item) => data.indexOf(item) != index));
+    setData(data.filter((item) => data.indexOf(item) !== index));
   };
 
   let yearSeparated = date.slice(0,4)
@@ -81,7 +81,7 @@ export const Activity = ({ name, date, index, data, setData }) => {
         </div>
       </div>
       <div className="delete">
-        <img src={deletesymbol} onClick={(e) => deleteData()} />
+        <img src={deletesymbol} onClick={(e) => deleteData()} alt="delete" />
       </div>
     </Style>
   );

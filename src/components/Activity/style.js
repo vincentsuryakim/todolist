@@ -12,6 +12,9 @@ export const Style = styled.div`
     .information {
         height: 100%;
         width: 90%;
+        @media (max-width: 576.98px) {
+            width: 80%;
+        }
         /* background-color: red; */
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -38,6 +41,9 @@ export const Style = styled.div`
     }
     .delete {
         width: 10%;
+        @media (max-width: 576.98px) {
+            width: 20%;
+        }
         height: 100%;
         /* background-color: green; */
         border-top-right-radius: 10px;
@@ -45,5 +51,11 @@ export const Style = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        img {
+            cursor: pointer;
+            @media (max-width: 576.98px) {
+                width: 30px;
+            }
+        }
     }
 `;
