@@ -167,6 +167,7 @@ export const Landing = () => {
             </div>
             <div className="tasklist-content">
               {data &&
+                // eslint-disable-next-line
                 data.map((content, idx) => {
                   if (content.name.includes(searchedName)) {
                     return (
